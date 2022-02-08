@@ -63,7 +63,7 @@ public class JobTest {
     }
 
     @Test
-    public void testingPrintLine(){
+    public void testToStringContainsCorrectLabelsAndData(){
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String[] beginsWithCategory = job1.toString().trim().split("\n");
 
@@ -85,7 +85,7 @@ public class JobTest {
 
 
     @Test
-    public void testToStringDataUnavailable() {
+    public void testToStringHandlesEmptyField() {
         Job job3 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
         String[] printLine = job3.toString().trim().split("\n");
 //        printLine[0] = printLine[0].split()
