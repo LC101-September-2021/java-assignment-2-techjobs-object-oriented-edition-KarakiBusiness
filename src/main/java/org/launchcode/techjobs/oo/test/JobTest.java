@@ -3,6 +3,10 @@ package org.launchcode.techjobs.oo.test;
 import org.junit.Test;
 import org.launchcode.techjobs.oo.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class JobTest {
@@ -72,13 +76,20 @@ public class JobTest {
 
     }
 
-//    @Test
-//    public void testingUnavailableData(){
-//        Job job1 = new Job("Ice cream taster", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Taste"));
-//        String[] beginsWithCategory = job1.toString().trim().split("\n");
-//        assertTrue(job1.getEmployer().toString().contains("Data Not Available"));
-//    }
 
+    @Test
+    public void testToStringDataUnavailable() {
+        Job job3 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        String[] printLine = job3.toString().trim().split("\n");
+
+        System.out.println(job3);
+        assertTrue(printLine[1].endsWith("Data not available"));
+        assertTrue(printLine[2].endsWith("Data not available"));
+        assertTrue(printLine[3].endsWith("Data not available"));
+        assertTrue(printLine[4].endsWith("Data not available"));
+        assertTrue(printLine[5].endsWith("Data not available"));
+
+    }
 
 
 }

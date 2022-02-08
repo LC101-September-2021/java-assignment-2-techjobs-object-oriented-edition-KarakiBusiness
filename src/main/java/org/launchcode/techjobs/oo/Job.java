@@ -106,7 +106,6 @@ public class Job {
         String[] labels = {"ID: ", "Name: ", "Employer: ", "Location: ", "Position Type: ", "Core Competency: "};
         StringBuilder result = new StringBuilder();
         Field[] fields = this.getClass().getDeclaredFields();
-        String dataNotAvailable = "Data Not Available";
         result.append("\n");
         int iterator = 0;
 
@@ -117,7 +116,7 @@ public class Job {
                 try {
                     result.append(labels[iterator]);
                     if ( field.get(this).toString() == "" ) {
-                        result.append(dataNotAvailable);
+                        result.append("Data not available");
                     } else {
                         result.append(field.get(this));
                     }
