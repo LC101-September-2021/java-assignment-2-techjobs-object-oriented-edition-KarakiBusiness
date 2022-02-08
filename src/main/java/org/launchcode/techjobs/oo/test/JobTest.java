@@ -22,12 +22,11 @@ public class JobTest {
     }
 
     @Test
-    public void testSettingId(){
-        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+    public void testSettingJobId(){
+        Job job1 = new Job();
+        Job job2 = new Job();
         assertNotSame(job1.getId(), job2.getId());
-        assertTrue((job1.getId() ) == job2.getId() -1);
-
+        System.out.println("firstId: " + job1.getId() + " secondId: " + job2.getId());
     }
 
     @Test
