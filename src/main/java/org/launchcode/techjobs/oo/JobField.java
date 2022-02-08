@@ -1,4 +1,4 @@
-package org.launchcode.techjobs_oo;
+package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
@@ -23,15 +23,6 @@ public abstract class JobField {
     //  Getters and Setters
     public int getId() {
         return id;
-    }
-
-
-    public static int getNextId() {
-        return nextId;
-    }
-
-    public static void setNextId(int nextId) {
-        JobField.nextId = nextId;
     }
 
     public String getValue() {
