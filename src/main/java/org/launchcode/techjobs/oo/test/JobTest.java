@@ -21,6 +21,14 @@ public class JobTest {
 
     }
 
+    @Test
+    public void testSettingID(){
+        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertNotSame(job1.getId(), job2.getId());
+
+
+    }
 
     @Test
     public void testJobConstructorSetsAllFields(){
@@ -81,7 +89,8 @@ public class JobTest {
     public void testToStringDataUnavailable() {
         Job job3 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
         String[] printLine = job3.toString().trim().split("\n");
-
+//        printLine[0] = printLine[0].split()
+        assertEquals("ID: " + job3.getId(),printLine[0] );
         System.out.println(job3);
         assertTrue(printLine[1].endsWith("Data not available"));
         assertTrue(printLine[2].endsWith("Data not available"));
