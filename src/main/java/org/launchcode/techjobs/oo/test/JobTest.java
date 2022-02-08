@@ -22,7 +22,7 @@ public class JobTest {
     }
 
     @Test
-    public void testSettingID(){
+    public void testSettingId(){
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         assertNotSame(job1.getId(), job2.getId());
