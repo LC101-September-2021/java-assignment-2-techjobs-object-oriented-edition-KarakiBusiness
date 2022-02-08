@@ -66,6 +66,9 @@ public class JobTest {
     public void testToStringContainsCorrectLabelsAndData(){
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String[] beginsWithCategory = job1.toString().trim().split("\n");
+        for(int i=0; i<beginsWithCategory.length;i++){
+            System.out.println(beginsWithCategory[i]);
+        }
 
         assertTrue(beginsWithCategory[0].startsWith("ID: "));
         assertTrue(beginsWithCategory[1].startsWith("Name: "));
@@ -73,6 +76,9 @@ public class JobTest {
         assertTrue(beginsWithCategory[3].startsWith("Location: "));
         assertTrue(beginsWithCategory[4].startsWith("Position Type: "));
         assertTrue(beginsWithCategory[5].startsWith("Core Competency: "));
+
+        assertEquals("Name: Product tester", beginsWithCategory[1]);
+        assertEquals( "ID: 1", beginsWithCategory[0]);
 
         assertTrue(beginsWithCategory[0].endsWith(Integer.toString(job1.getId())));
         assertTrue(beginsWithCategory[1].endsWith(job1.getName()));
