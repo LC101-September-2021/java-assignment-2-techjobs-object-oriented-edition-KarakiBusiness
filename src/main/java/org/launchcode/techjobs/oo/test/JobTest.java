@@ -53,7 +53,7 @@ public class JobTest {
     }
 
     @Test
-    public void testForNewLinesBeforeAndAfter(){
+    public void testToStringStartsAndEndsWithNewLine(){
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         int lastIndex = (job1.toString().length()-1);
 
