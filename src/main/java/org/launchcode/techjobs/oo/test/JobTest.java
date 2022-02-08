@@ -55,10 +55,12 @@ public class JobTest {
     @Test
     public void testToStringStartsAndEndsWithNewLine(){
         Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        int lastIndex = (job1.toString().length()-1);
+
 
         assertTrue(job1.toString().charAt(0)=='\n');
-        assertTrue(job1.toString().charAt(lastIndex) == '\n');
+        assertTrue(job1.toString().charAt(job1.toString().length()-1) == '\n');
+        assertEquals('\n', job1.toString().charAt(0));
+        assertEquals('\n',job1.toString().charAt(job1.toString().length()-1));
 
     }
 
